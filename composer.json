@@ -1,0 +1,30 @@
+{
+    "name": "sarah-systems/sssm-core",
+    "description": "SarahSystems Simple Site Manager(sssm) core system",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Shoji Ogura",
+            "email": "kohenji@sarahsytems.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "codeigniter4/framework": "^4",
+        "codeigniter4/translations": "^4@rc",
+        "smarty/smarty": "3.1.*",
+        "smarty-gettext/smarty-gettext": "^1.6",
+        "sarah-systems/ci4smarty": "*",
+        "ext-gettext": "^7.3",
+        "ext-intl": "*",
+        "ext-mbstring": "*",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sssm\\": "src"
+        }
+    }
+}

@@ -1,0 +1,1 @@
+{include file='sssm/base/login.tpl'}
