@@ -10,11 +10,11 @@
  * =============================================================================================
  */
 
-namespace App\Models;
+namespace Sssm\Models;
 use CodeIgniter\Model;
 use CodeIgniter\Router\Exceptions\RedirectException;
-use Config\SssmLang;
-use Config\SssmUser;
+use Sssm\Config\SssmLang;
+use Sssm\Config\SssmUser;
 use DateTime;
 use Exception;
 use function sssm\functions\check_ip;

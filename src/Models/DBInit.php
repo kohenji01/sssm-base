@@ -10,10 +10,10 @@
  * =============================================================================================
  */
 
-namespace App\Models;
+namespace Sssm\Models;
 
 use Config\Database;
-use Config\SssmLang;
+use Sssm\Config\SssmLang;
 use Exception;
 
 class DBInit extends SystemInit{

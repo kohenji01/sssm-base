@@ -10,7 +10,7 @@
  * =============================================================================================
  */
 
-namespace App\Models;
+namespace Sssm\Models;
 
 use CodeIgniter\Database\ConnectionInterface;
 use CodeIgniter\Model;

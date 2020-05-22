@@ -10,7 +10,7 @@
  * =============================================================================================
  */
 
-namespace App\Models;
+namespace Sssm\Models;
 use CodeIgniter\Model;
 
 class Dbtest extends Model{
