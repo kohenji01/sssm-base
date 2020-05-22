@@ -26,5 +26,10 @@
         "psr-4": {
             "Sssm\\": "src"
         }
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "@composer dump-autoload"
+        ]
     }
 }
