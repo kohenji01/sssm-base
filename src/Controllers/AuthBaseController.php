@@ -10,7 +10,7 @@
  * =============================================================================================
  */
 
-namespace Sssm\Controllers;
+namespace Sssm\Base\Controllers;
 
 /**
  * Class BaseController
@@ -27,7 +27,7 @@ namespace Sssm\Controllers;
 
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
-use Config\SssmUser;
+use Sssm\Base\Config\SssmUser;
 use Psr\Log\LoggerInterface;
 
 /**

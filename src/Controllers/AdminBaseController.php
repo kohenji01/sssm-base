@@ -10,7 +10,7 @@
  * =============================================================================================
  */
 
-namespace Sssm\Controllers;
+namespace Sssm\Base\Controllers;
 
 /**
  * Class BaseController
@@ -28,7 +28,7 @@ namespace Sssm\Controllers;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Router\Exceptions\RedirectException;
-use Config\SssmAdmin;
+use Sssm\Base\Config\SssmAdmin;
 use Psr\Log\LoggerInterface;
 
 /**

@@ -10,7 +10,7 @@
  * =============================================================================================
  */
 
-namespace sssm\Config;
+namespace sssm\Base\Config;
 
 use CodeIgniter\Config\BaseConfig;
 

@@ -10,7 +10,7 @@
  * =============================================================================================
  */
 
-namespace Sssm\Models;
+namespace Sssm\Base\Models;
 use CodeIgniter\Model;
 use CodeIgniter\Router\Exceptions\RedirectException;
 use Sssm\Config\SssmLang;

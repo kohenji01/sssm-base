@@ -1,8 +1,8 @@
 {
     "name": "sarah-systems/sssm-base",
     "description": "SarahSystems Simple Site Manager(sssm) core system",
-    "minimum-stability": "stable",
-    "license": "proprietary",
+    "minimum-stability": "dev",
+    "license": "MIT",
     "authors": [
         {
             "name": "Shoji Ogura",
@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Sssm\\": "src"
+            "Sssm\\Base\\": "src"
         }
     },
     "scripts": {

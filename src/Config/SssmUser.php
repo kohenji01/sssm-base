@@ -10,7 +10,7 @@
  * =============================================================================================
  */
 
-namespace sssm\Config;
+namespace sssm\Base\Config;
 
 class SssmUser extends SssmThemes{
 

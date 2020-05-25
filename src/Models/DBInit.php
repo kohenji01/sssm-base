@@ -10,7 +10,7 @@
  * =============================================================================================
  */
 
-namespace Sssm\Models;
+namespace Sssm\Base\Models;
 
 use Config\Database;
 use Sssm\Config\SssmLang;

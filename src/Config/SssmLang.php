@@ -10,7 +10,7 @@
  * =============================================================================================
  */
 
-namespace sssm\Config;
+namespace sssm\Base\Config;
 
 use function sssm\functions\change_locale;
 

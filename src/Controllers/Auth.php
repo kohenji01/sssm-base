@@ -10,9 +10,9 @@
  * =============================================================================================
  */
 
-namespace Sssm\Controllers;
+namespace Sssm\Base\Controllers;
 
-use App\Models\User;
+use Sssm\Base\Models\User;
 use CodeIgniter\Router\Exceptions\RedirectException;
 use Exception;
 

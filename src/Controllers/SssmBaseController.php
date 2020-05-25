@@ -10,7 +10,7 @@
  * =============================================================================================
  */
 
-namespace Sssm\Controllers;
+namespace Sssm\Base\Controllers;
 
 /**
  * Class BaseController
@@ -25,13 +25,13 @@ namespace Sssm\Controllers;
  * @package CodeIgniter
  */
 
-use App\Models\User;
+use Sssm\Base\Models\User;
 use CI4Smarty\ThirdParty\CiSmarty;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Config\Services;
-use sssm\Config\SssmThemes;
+use Sssm\Base\Config\SssmThemes;
 use Exception;
 use Psr\Log\LoggerInterface;
 use ReflectionClass;
