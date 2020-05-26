@@ -25,7 +25,10 @@
     "autoload": {
         "psr-4": {
             "Sssm\\Base\\": "src"
-        }
+        },
+        "files": [
+            "src/Helpers/sssm_helper.php"
+        ]
     },
     "scripts": {
         "post-update-cmd": [

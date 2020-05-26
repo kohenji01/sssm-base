@@ -1,18 +1,18 @@
 <?php
 /**
  * =============================================================================================
- *  $URL:$
- *  $Rev:$
- *  $Date::                           $
- *  $Author:$
- *  $Id:$
- *  Copyright (c) 2019. SarahSystems lpc. All rights reserved.
+ *  Project: sssm-base
+ *  File: SssmLang.php
+ *  Date: 2020/05/25 18:08
+ *  Author: Shoji Ogura <kohenji@sarahsytems.com>
+ *  Copyright (c) 2020. Shoji Ogura
+ *  This software is released under the MIT License, see LICENSE.txt.
  * =============================================================================================
  */
 
-namespace sssm\Base\Config;
+namespace Sssm\Base\Config;
 
-use function sssm\functions\change_locale;
+use function Sssm\Helpers\change_locale;
 
 class SssmLang extends SssmBase{
 

@@ -10,7 +10,7 @@
  * =============================================================================================
  */
 
-namespace sssm\Base\Config;
+namespace Sssm\Base\Config;
 
 use CodeIgniter\Config\BaseConfig;
 
@@ -34,7 +34,7 @@ class SssmBase extends BaseConfig{
 
     public function __construct(){
         parent::__construct();
-        $this->systemName = $_ENV['sssm.sysname'];
+        $this->systemName = $_ENV['sssm.sysname'] ?? 'sssm';
 
     }
 

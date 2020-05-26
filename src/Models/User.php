@@ -1,20 +1,20 @@
 <?php
 /**
  * =============================================================================================
- *  $URL:$
- *  $Rev:$
- *  $Date::                           $
- *  $Author:$
- *  $Id:$
- *  Copyright (c) 2019. SarahSystems lpc. All rights reserved.
+ *  Project: sssm-base
+ *  File: User.php
+ *  Date: 2020/05/25 18:07
+ *  Author: Shoji Ogura <kohenji@sarahsytems.com>
+ *  Copyright (c) 2020. Shoji Ogura
+ *  This software is released under the MIT License, see LICENSE.txt.
  * =============================================================================================
  */
 
 namespace Sssm\Base\Models;
 use CodeIgniter\Model;
 use CodeIgniter\Router\Exceptions\RedirectException;
-use Sssm\Config\SssmLang;
-use Sssm\Config\SssmUser;
+use Sssm\Base\Config\SssmLang;
+use Sssm\Base\Config\SssmUser;
 use DateTime;
 use Exception;
 use function sssm\functions\check_ip;

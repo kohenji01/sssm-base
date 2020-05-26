@@ -1,16 +1,16 @@
 <?php
 /**
  * =============================================================================================
- *  $URL:$
- *  $Rev:$
- *  $Date::                           $
- *  $Author:$
- *  $Id:$
- *  Copyright (c) 2019. SarahSystems lpc. All rights reserved.
+ *  Project: sssm-base
+ *  File: SssmUser.php
+ *  Date: 2020/05/25 18:07
+ *  Author: Shoji Ogura <kohenji@sarahsytems.com>
+ *  Copyright (c) 2020. Shoji Ogura
+ *  This software is released under the MIT License, see LICENSE.txt.
  * =============================================================================================
  */
 
-namespace sssm\Base\Config;
+namespace Sssm\Base\Config;
 
 class SssmUser extends SssmThemes{
 

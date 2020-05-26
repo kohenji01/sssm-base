@@ -12,7 +12,7 @@
  */
 
 
-namespace sssm\functions{
+namespace Sssm\Helpers{
 
     use Exception;
     use Locale;
@@ -199,8 +199,7 @@ namespace sssm\functions{
      * @return bool
      */
     function check_tablet(){
-        $ua = new UserAgent();
-        return ( $ua->set() === "tablet" );
+        return ( getUserAgent() === "tablet" );
     }
 
     /**
@@ -208,50 +207,44 @@ namespace sssm\functions{
      * @return bool
      */
     function check_mobile(){
-        $ua = new UserAgent();
-        return ( $ua->set() === "mobile" );
+        return ( getUserAgent() === "mobile" );
     }
-
+    
     /**
      * UAのPC/タブレット/モバイルを判別するクラス
      * Class UserAgent
      */
-    class UserAgent{
-        private $ua;
-        private $device;
-
-        public function set(){
-            $this->ua = mb_strtolower( $_SERVER['HTTP_USER_AGENT'] );
-            if( strpos( $this->ua , 'iphone' ) !== false ){
-                $this->device = 'mobile';
-            }elseif( strpos( $this->ua , 'ipod' ) !== false ){
-                $this->device = 'mobile';
-            }elseif( ( strpos( $this->ua , 'android' ) !== false ) && ( strpos( $this->ua , 'mobile' ) !== false ) ){
-                $this->device = 'mobile';
-            }elseif( ( strpos( $this->ua , 'windows' ) !== false ) && ( strpos( $this->ua , 'phone' ) !== false ) ){
-                $this->device = 'mobile';
-            }elseif( ( strpos( $this->ua , 'firefox' ) !== false ) && ( strpos( $this->ua , 'mobile' ) !== false ) ){
-                $this->device = 'mobile';
-            }elseif( strpos( $this->ua , 'blackberry' ) !== false ){
-                $this->device = 'mobile';
-            }elseif( strpos( $this->ua , 'ipad' ) !== false ){
-                $this->device = 'tablet';
-            }elseif( ( strpos( $this->ua , 'windows' ) !== false ) && ( strpos( $this->ua , 'touch' ) !== false && ( strpos( $this->ua , 'tablet pc' ) == false ) ) ){
-                $this->device = 'tablet';
-            }elseif( ( strpos( $this->ua , 'android' ) !== false ) && ( strpos( $this->ua , 'mobile' ) === false ) ){
-                $this->device = 'tablet';
-            }elseif( ( strpos( $this->ua , 'firefox' ) !== false ) && ( strpos( $this->ua , 'tablet' ) !== false ) ){
-                $this->device = 'tablet';
-            }elseif( ( strpos( $this->ua , 'kindle' ) !== false ) || ( strpos( $this->ua , 'silk' ) !== false ) ){
-                $this->device = 'tablet';
-            }elseif( ( strpos( $this->ua , 'playbook' ) !== false ) ){
-                $this->device = 'tablet';
-            }else{
-                $this->device = 'others';
-            }
-
-            return $this->device;
+    function getUserAgent(){
+        $ua = mb_strtolower( $_SERVER['HTTP_USER_AGENT'] );
+        if( strpos( $ua , 'iphone' ) !== false ){
+            $device = 'mobile';
+        }elseif( strpos( $ua , 'ipod' ) !== false ){
+            $device = 'mobile';
+        }elseif( ( strpos( $ua , 'android' ) !== false ) && ( strpos( $ua , 'mobile' ) !== false ) ){
+            $device = 'mobile';
+        }elseif( ( strpos( $ua , 'windows' ) !== false ) && ( strpos( $ua , 'phone' ) !== false ) ){
+            $device = 'mobile';
+        }elseif( ( strpos( $ua , 'firefox' ) !== false ) && ( strpos( $ua , 'mobile' ) !== false ) ){
+            $device = 'mobile';
+        }elseif( strpos( $ua , 'blackberry' ) !== false ){
+            $device = 'mobile';
+        }elseif( strpos( $ua , 'ipad' ) !== false ){
+            $device = 'tablet';
+        }elseif( ( strpos( $ua , 'windows' ) !== false ) && ( strpos( $ua , 'touch' ) !== false && ( strpos( $ua , 'tablet pc' ) == false ) ) ){
+            $device = 'tablet';
+        }elseif( ( strpos( $ua , 'android' ) !== false ) && ( strpos( $ua , 'mobile' ) === false ) ){
+            $device = 'tablet';
+        }elseif( ( strpos( $ua , 'firefox' ) !== false ) && ( strpos( $ua , 'tablet' ) !== false ) ){
+            $device = 'tablet';
+        }elseif( ( strpos( $ua , 'kindle' ) !== false ) || ( strpos( $ua , 'silk' ) !== false ) ){
+            $device = 'tablet';
+        }elseif( ( strpos( $ua , 'playbook' ) !== false ) ){
+            $device = 'tablet';
+        }else{
+            $device = 'others';
         }
+        
+        return $device;
     }
 
     /**
