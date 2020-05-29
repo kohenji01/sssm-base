@@ -358,4 +358,11 @@ namespace Sssm\Helpers{
         }
         return $ret;
     }
+    
+    
+    function smarty_body_path( $file , $views_dir = 'Views' ){
+        return dirname( dirname( $file ) ) . DIRECTORY_SEPARATOR . $views_dir . DIRECTORY_SEPARATOR . basename( $file , ".php" );
+    }
+    
+    
 }

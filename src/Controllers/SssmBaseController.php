@@ -97,7 +97,13 @@ class SssmBaseController extends Controller
                 $dir = $class;
             }
             $this->smarty->assign( 'CI' , $this );
-            $this->sssm->include_file['body'] = $dir . DIRECTORY_SEPARATOR . $file;
+    
+            if( $this->sssm->smartyBodyPath !== '' ){
+                $this->sssm->include_file['body'] = $this->sssm->smartyBodyPath . DIRECTORY_SEPARATOR . $file;
+            }else{
+                $this->sssm->include_file['body'] = $dir . DIRECTORY_SEPARATOR . $file;
+            }
+            
             $tpl = $this->sssm->systemName . DIRECTORY_SEPARATOR . $this->sssm->theme_dir_name . DIRECTORY_SEPARATOR . $this->sssm->theme . DIRECTORY_SEPARATOR . $this->sssm->theme_tpl_file_name;
 
             return $this->smarty->display( $tpl );

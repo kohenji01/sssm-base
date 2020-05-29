@@ -19,7 +19,9 @@ class SssmBase extends BaseConfig{
     public $systemMessage;
 
     public $systemErrorMessage;
-
+    
+    public $smartyBodyPath = '';
+    
     /**
      * @var string システム名
      */
