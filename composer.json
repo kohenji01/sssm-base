@@ -16,6 +16,7 @@
         "smarty/smarty": "3.1.*",
         "smarty-gettext/smarty-gettext": "^1.6",
         "sarah-systems/ci4smarty": "*",
+        "matriphe/iso-639": "^1",
         "ext-gettext": "^7.3",
         "ext-intl": "*",
         "ext-mbstring": "*",
