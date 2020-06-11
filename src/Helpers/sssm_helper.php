@@ -364,5 +364,28 @@ namespace Sssm\Helpers{
         return dirname( dirname( $file ) ) . DIRECTORY_SEPARATOR . $views_dir . DIRECTORY_SEPARATOR . basename( $file , ".php" );
     }
     
+    /**
+     * 差込コマンドの置換
+     *
+     * @param string $contents テンプレートコンテンツ
+     * @param array $replace_list 差し込みリスト
+     * @param string $quote 差し込みキーの引用符
+     * @return string 変換されたコンテンツ
+     */
+    function replace_kwd( $contents = '' , $replace_list = [] , $quote = '##' ){
+        
+        foreach( $replace_list as $key => $value ){
+            if( is_array( $value ) ){
+                continue;
+            }
+            $regex = "/{$quote}{$key}{$quote}/";
+            $contents = preg_replace( $regex , $value , $contents );
+        }
+        
+        //残ったコマンドを消す
+        $regex = "/{$quote}(.*?){$quote}/";
+        $contents = preg_replace( $regex , "" , $contents );
+        return $contents;
+    }
     
 }
