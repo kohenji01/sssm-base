@@ -38,7 +38,7 @@ class Api extends UserBaseController{
             $class = str_replace( '.' , '\\' , $function );
             $API = new $class();
             if( $API->apiEnable === true && in_array( $action , $API->apiExecutable ) ){
-                $API->accessFromAPI = true;
+                $API->setAccessFromAPI( true );
                 if( $background == 'background' && in_array( $action , $API->apiBackGroundExecutable ) ){
                     $g_params = urlencode( serialize( $this->request->getGet() ) );
                     $p_params = urlencode( serialize( $this->request->getPost() ) );

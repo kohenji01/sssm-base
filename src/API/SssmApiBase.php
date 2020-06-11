@@ -17,22 +17,62 @@ trait SssmApiBase{
     /**
      * @var bool $apiEnable APIが有効かどうか？
      */
-    public $apiEnable = true;
+    protected $apiEnable = true;
     /**
      * @var array $apiExecutable APIが使用できるメソッド
      */
-    public $apiExecutable = [];
+    protected $apiExecutable = [];
     /**
      * @var bool $accessFromAPI APIからアクセスされると自動的にこれはTrueになる
      */
-    public $accessFromAPI = false;
+    protected $accessFromAPI = false;
     /**
      * @var string $apiOutputType APIの出力方法（json|xml）
      */
-    public $apiOutputType = 'json';
+    protected $apiOutputType = 'json';
     /**
      * @var array $apiBackgroundExecutable バックグラウンド動作可能なメソッド
      */
-    public $apiBackGroundExecutable = [];
+    protected $apiBackGroundExecutable = [];
     
+    /**
+     * APIが有効かどうか？
+     * @param bool $flag
+     */
+    protected function setApiEnable( bool $flag ){
+        $this->apiEnable = $flag;
+    }
+    
+    /**
+     * APIが使用できるメソッド
+     * @param array $list
+     */
+    protected function setApiExecutable( array $list ){
+        $this->apiExecutable = $list;
+    }
+    
+    /**
+     * APIからアクセスされると自動的にこれはTrueになる
+     * @param bool $flag
+     */
+    public function setAccessFromAPI( bool $flag ){
+        $this->accessFromAPI = $flag;
+    }
+    
+    /**
+     * APIの出力方法（json|xml）
+     * @param string $type
+     */
+    protected function setApiOutputType( string $type ){
+        $this->apiOutputType = $type;
+    }
+    
+    /**
+     * バックグラウンド動作可能なメソッド
+     * @param array $list
+     */
+    protected function setApiBackgroundExecutable( array $list ){
+        $this->apiBackGroundExecutable = $list;
+    }
+
 }

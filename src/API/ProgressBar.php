@@ -20,8 +20,6 @@ class ProgressBar {
     
     use SssmApiBase;
     
-    public $apiExecutable = [ 'getProgress' , 'startProgress' , 'test' ];
-    
     protected $saveDirectory = '';
     protected $progressId = null;
     
@@ -33,6 +31,9 @@ class ProgressBar {
         $config = new SssmBase();
         $this->saveDirectory = WRITEPATH . $config->systemName . DIRECTORY_SEPARATOR . 'ProgressBar' . DIRECTORY_SEPARATOR ;
         $this->progressId = $_GET['pid'] ?? '';
+    
+        $this->setApiExecutable( [ 'getProgress' , 'startProgress' , 'test' ] );
+
     }
     
     /** @noinspection PhpUnused */
