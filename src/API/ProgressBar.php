@@ -18,7 +18,7 @@ use Sssm\Base\Config\SssmBase;
 /** @noinspection PhpUnused */
 class ProgressBar {
     
-    use SssmApiBase;
+    use SssmApiBaseTrait;
     
     protected $saveDirectory = '';
     protected $progressId = null;

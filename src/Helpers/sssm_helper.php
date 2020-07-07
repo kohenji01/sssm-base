@@ -13,7 +13,9 @@
 
 
 namespace Sssm\Helpers{
-
+    
+    use Config\Database;
+    use Config\Services;
     use Exception;
     use Locale;
     use Normalizer;
@@ -330,7 +332,7 @@ namespace Sssm\Helpers{
      * @param string $separator
      * @return bool|string
      */
-    function db_comment_format( $comment , $separator ){
+    function db_comment_format( $comment , $separator = '::' ){
         $pos = strpos( $comment , $separator );
         if( $pos !== false ){
             if( $pos == 0 ){
@@ -369,10 +371,11 @@ namespace Sssm\Helpers{
      *
      * @param string $contents テンプレートコンテンツ
      * @param array $replace_list 差し込みリスト
+     * @param boolean $erase_left 残りのキーワードを消去する
      * @param string $quote 差し込みキーの引用符
      * @return string 変換されたコンテンツ
      */
-    function replace_kwd( $contents = '' , $replace_list = [] , $quote = '##' ){
+    function replace_kwd( $contents = '' , $replace_list = [] , $erase_left = true , $quote = '##' ){
         
         foreach( $replace_list as $key => $value ){
             if( is_array( $value ) ){
@@ -383,9 +386,42 @@ namespace Sssm\Helpers{
         }
         
         //残ったコマンドを消す
-        $regex = "/{$quote}(.*?){$quote}/";
-        $contents = preg_replace( $regex , "" , $contents );
+        if( $erase_left ){
+            $regex = "/{$quote}(.*?){$quote}/";
+            $contents = preg_replace( $regex , "" , $contents );
+        }
+        
         return $contents;
     }
     
+    /**
+     * enumの選択肢を取得
+     * @param string $table テーブル名
+     * @param string $field カラム名
+     * @return mixed
+     */
+    function get_enums( $table , $field ){
+        try{
+            $db = Database::connect();;
+            if( !$db->fieldExists( $field , $table ) ){
+                throw new Exception();
+            }
+            $enums = array();
+            $row = $db->query( "SHOW COLUMNS FROM " . $table . " LIKE ?" , array( $field ) )->getRow()->Type;
+            preg_match_all( "/'(.*?)'/" , $row , $enum_array );
+            $enum_fields = $enum_array[1];
+            if( is_array( $enum_fields ) ){
+                foreach( $enum_fields as $value ){
+                    $enums[$value] = $value;
+                }
+            }else{
+                throw new Exception();
+            }
+        }catch( Exception $e ){
+            $enums = false;
+        }
+        return $enums;
+    }
+
+
 }

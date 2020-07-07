@@ -13,7 +13,7 @@
 
 namespace Sssm\Base\API;
 
-trait SssmApiBase{
+trait SssmApiBaseTrait{
     /**
      * @var bool $apiEnable APIが有効かどうか？
      */
